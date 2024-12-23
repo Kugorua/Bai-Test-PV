@@ -33,7 +33,7 @@ import imgBannerSP from "~/assets/images/BG_SP.png";
 import imgArrowRight from "~/assets/images/arrow-right.png";
 const { t } = useI18n();
 
-const targetDate = new Date("2024-12-23").getTime();
+const targetDate = new Date("2024-12-26").getTime();
 
 const countdown = reactive({
   Day: 0,
@@ -42,7 +42,6 @@ const countdown = reactive({
   Seconds: 0,
 });
 
-// Countdown logic
 const updateCountdown = () => {
   const now = new Date().getTime();
   const difference = targetDate - now;

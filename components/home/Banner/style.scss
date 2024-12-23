@@ -60,7 +60,7 @@
       line-height: screen-1200(50, 120);
       white-space: nowrap;
       @media screen and (max-width: 768px) {
-        white-space: normal;
+        white-space: pre-line;
         text-align: center;
       }
     }
