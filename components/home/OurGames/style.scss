@@ -69,6 +69,19 @@
           }
         }
       }
+
+      .game-card-sp {
+        display: none;
+        @media screen and (max-width: 768px) {
+          display: flex;
+        }
+      }
+
+      .game-card-pc {
+        @media screen and (max-width: 768px) {
+          display: none;
+        }
+      }
     }
   }
 }
