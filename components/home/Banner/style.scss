@@ -1,0 +1,154 @@
+@use "@/assets/styles/_functions.scss" as *;
+
+.banner {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  &_img-pc {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+  &_img-sp {
+    width: 100%;
+    height: 832px;
+    object-fit: cover;
+    object-position: center;
+    display: none;
+    @media screen and (max-width: 768px) {
+      display: block;
+    }
+  }
+  &_container {
+    width: fit-content;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: radial-gradient(
+      27.72% 27.79% at 50.81% 68.15%,
+      #210544 0%,
+      rgba(23, 5, 68, 0.71) 50.52%,
+      rgba(23, 5, 68, 0) 100%
+    );
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 40px 80px;
+    z-index: 3;
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      top: 41%;
+      background: transparent;
+      backdrop-filter: blur(0px);
+      -webkit-backdrop-filter: blur(0px);
+      padding: 0px 16px;
+    }
+    h1 {
+      font-size: screen-1200(40, 80);
+      font-weight: 900;
+      font-family: "Playfair Display", serif;
+      color: #ffffff;
+
+      line-height: screen-1200(50, 120);
+      white-space: nowrap;
+      @media screen and (max-width: 768px) {
+        white-space: normal;
+        text-align: center;
+      }
+    }
+  }
+  .countdown {
+    padding: screen-1200(24, 26) screen-1200(26, 40);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 20px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 756px;
+  }
+  .separator {
+    font-size: screen-1200(40, 65);
+    font-family: "Montserrat", serif;
+    font-weight: 400;
+  }
+  .time-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #000000;
+    border-radius: 0;
+    width: screen-1200(40, 150);
+    p {
+      font-family: "Montserrat", serif;
+      font-size: screen-1200(12, 16);
+      font-weight: 700;
+      &:first-of-type {
+        font-size: screen-1200(36, 60);
+        font-weight: 900;
+        font-family: "Playfair Display", serif;
+      }
+    }
+  }
+  .describe {
+    font-size: screen-1200(12, 18);
+    font-family: "Montserrat", serif;
+    font-weight: 400;
+    max-width: 560px;
+    text-align: center;
+    color: #ffffff;
+    margin-top: screen-1200(40, 98);
+    width: 100%;
+  }
+
+  .new-letter {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 18px 14px;
+    max-width: 560px;
+    width: 100%;
+    border-radius: 8px;
+    margin-top: screen-1200(16, 32);
+    input {
+      outline: none;
+      flex-grow: 1;
+      font-size: 14px;
+      font-family: "Montserrat", serif;
+      font-weight: 400;
+    }
+    img: {
+    }
+  }
+  .fairy-img {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 938px;
+    width: 100%;
+    min-width: 1920px;
+    background-image: url("~/assets/images/Fairy.png");
+    background-size: 938px;
+    background-position: 0;
+    z-index: 2;
+    @media screen and (max-width: 768px) {
+      // display: none;
+      left: auto;
+      transform: translateX(0);
+      min-width: 100%;
+      background-image: url("~/assets/images/fairy-sp.png");
+      background-size: 350px;
+      background-position: 50% 100%;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@use "sass:math";
+
+@function screen-1200($min, $max) {
+  $preferred: math.div($max, 1200) * 100; // Sử dụng math.div thay vì dấu "/"
+  @return clamp(#{$min}px, #{$preferred}vw, #{$max}px);
+}
+
+@function screen-375($min, $max) {
+  $preferred: math.div($min, 375) * 100; // Sử dụng math.div thay vì dấu "/"
+  @return clamp(#{$min}px, #{$preferred}vw, #{$max}px);
+}

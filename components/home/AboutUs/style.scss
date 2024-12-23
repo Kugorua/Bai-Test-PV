@@ -1,0 +1,152 @@
+@use "@/assets/styles/_functions.scss" as *;
+.about-us {
+  width: 100%;
+  margin-top: 128px;
+  @media screen and (max-width: 768px) {
+    margin-top: 48px;
+  }
+  &_container {
+    max-width: 1320px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    gap: 40px;
+    padding: 0 80px;
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      padding: 0;
+    }
+  }
+  .left-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: screen-1200(40, 80);
+    @media screen and (max-width: 768px) {
+      padding: 0 screen-1200(16, 80);
+    }
+    @media screen and (max-width: 375px) {
+      flex-direction: column;
+      padding: 0 16px;
+    }
+    &_describe {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      @media screen and (max-width: 768px) {
+        gap: 16px;
+      }
+    }
+    &_statistical {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      @media screen and (max-width: 768px) {
+        flex-direction: row;
+      }
+      .item {
+        font-family: "Montserrat", serif;
+        font-weight: 700;
+        p {
+          font-size: screen-1200(44, 80);
+          color: rgba(7, 155, 238, 1);
+          line-height: screen-1200(53, 97);
+        }
+        mark {
+          font-size: screen-1200(36, 40);
+          background-color: transparent;
+          color: rgba(7, 155, 238, 1);
+          line-height: screen-1200(43, 48);
+        }
+      }
+    }
+  }
+
+  .right-content {
+    flex: 1;
+    &_wrap {
+      padding: 113px 75px;
+      background-color: rgba(238, 238, 238, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      @media screen and (max-width: 1200px) {
+        padding: 40px 16px;
+      }
+      @media screen and (max-width: 768px) {
+        padding: screen-1200(40, 113) screen-1200(16, 75);
+      }
+      @media screen and (max-width: 375px) {
+        padding: 40px 16px;
+      }
+    }
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+      @media screen and (max-width: 768px) {
+        gap: 20px;
+      }
+      .icon {
+        object-fit: none;
+      }
+      &_describe {
+        p {
+          font-family: "Montserrat", serif;
+
+          &:first-of-type {
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 30px;
+            margin-bottom: 8px;
+          }
+          &:last-of-type {
+            color: rgba(117, 117, 117, 1);
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 19px;
+          }
+        }
+      }
+    }
+  }
+  .bottom-content {
+    max-width: 1320px;
+    height: 805px;
+    width: 100%;
+    margin: 0 auto;
+    background-image: url("~/assets/images/Pin-map.png");
+    background-size: 1320px auto;
+    background-position: bottom;
+    position: relative;
+    margin-top: 68px;
+    .illustrator {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: rotate-vertical 5s linear infinite;
+      transition: transform 0.5s ease;
+    }
+    @media screen and (min-width: 320px) and (max-width: 768px) {
+      background-size: contain;
+      height: screen-375(350, 805);
+      .illustrator {
+        top: auto;
+        bottom: screen-375(108, 805);
+        width: screen-375(300, 805);
+      }
+    }
+  }
+
+  @keyframes rotate-vertical {
+    0% {
+      transform: translateX(-50%) rotateY(0deg);
+    }
+    100% {
+      transform: translateX(-50%) rotateY(360deg);
+    }
+  }
+}

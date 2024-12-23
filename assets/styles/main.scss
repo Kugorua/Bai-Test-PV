@@ -1,0 +1,16 @@
+@use "@/assets/styles/_variables.scss" as *;
+@use "@/assets/styles/_reset.scss" as *;
+@use "@/assets/styles/_base.scss" as *;
+@use "@/assets/styles/_common.scss" as *;
+@use "@/assets/styles/_layout.scss" as *;
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.root {
+  height: 100%;
+  min-height: 100vh;
+  position: relative;
+}
