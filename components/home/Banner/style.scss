@@ -1,10 +1,14 @@
 @use "@/assets/styles/_functions.scss" as *;
+@use "@/assets/styles/_mixin.scss" as *;
 
 .banner {
   height: 100vh;
   width: 100%;
   position: relative;
   overflow: hidden;
+  @media screen and (max-width: 768px) {
+    height: 832px;
+  }
   &_img-pc {
     width: 100%;
     height: 100%;
@@ -16,7 +20,7 @@
   }
   &_img-sp {
     width: 100%;
-    height: 832px;
+    height: 770px;
     object-fit: cover;
     object-position: center;
     display: none;
@@ -45,11 +49,12 @@
     z-index: 3;
     @media screen and (max-width: 768px) {
       width: 100%;
-      top: 41%;
+      top: 108px;
       background: transparent;
       backdrop-filter: blur(0px);
       -webkit-backdrop-filter: blur(0px);
       padding: 0px 16px;
+      transform: translate(-50%, 0%);
     }
     h1 {
       font-size: screen-1200(40, 80);
@@ -75,6 +80,10 @@
     margin-top: 20px;
     width: 100%;
     max-width: 756px;
+    @media screen and (max-width: 768px) {
+      margin-top: 38px;
+      min-height: 118px;
+    }
   }
   .separator {
     font-size: screen-1200(40, 65);
@@ -108,13 +117,17 @@
     color: #ffffff;
     margin-top: screen-1200(40, 98);
     width: 100%;
+    @media screen and (max-width: 768px) {
+      letter-spacing: 0.9px;
+      line-height: 15px;
+    }
   }
 
   .new-letter {
     display: flex;
     align-items: center;
     background-color: #ffffff;
-    padding: 18px 14px;
+    padding: 16px 14px;
     max-width: 560px;
     width: 100%;
     border-radius: 8px;
@@ -147,8 +160,8 @@
       transform: translateX(0);
       min-width: 100%;
       background-image: url("~/assets/images/fairy-sp.png");
-      background-size: 350px;
-      background-position: 50% 100%;
+      background-size: 300px;
+      background-position: calc(50% + 20px) calc(100% - 30px);
     }
   }
 }

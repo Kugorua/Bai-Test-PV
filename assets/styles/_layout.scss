@@ -2,6 +2,7 @@
 
 @use "variables" as *;
 @use "@/assets/styles/_functions.scss" as *;
+@use "@/assets/styles/_mixin.scss" as *;
 .header {
   position: absolute;
   top: 0;
@@ -14,16 +15,19 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px screen-1200(10, 80);
+    padding: 20px screen-375(16, 80);
     gap: screen-1200(10, 88);
   }
   .logo {
     width: fit-content;
+    @include Mobile() {
+      width: 68px;
+    }
   }
   .language {
     width: fit-content;
     text-align: end;
-    @media screen and (max-width: 768px) {
+    @include Mobile() {
       display: none;
     }
   }
@@ -39,14 +43,14 @@
       font-weight: bold;
       text-transform: uppercase;
     }
-    @media screen and (max-width: 768px) {
+    @include Mobile() {
       display: none;
     }
   }
   .menu-icon,
   .menu {
     display: none;
-    @media screen and (max-width: 768px) {
+    @include Mobile() {
       display: block;
     }
   }

@@ -8,7 +8,7 @@
   padding-bottom: 128px;
   @media screen and (min-width: 320px) and (max-width: 768px) {
     padding: 0 screen-375(16, 80);
-    margin-top: 50px;
+    margin-top: 55px;
     padding-bottom: 50px;
   }
   &_container {
@@ -35,21 +35,68 @@
       grid-template-columns: repeat(4, minmax(100px, 410px));
       width: 100%;
       max-width: 1920px;
+
       @media screen and (max-width: 768px) {
         grid-template-columns: repeat(2, minmax(164px, 410px));
-        gap: 15px;
+        gap: 20px 15px;
       }
       .game-card {
         overflow: hidden;
-
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        border-radius: 8px;
+        position: relative;
+        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
 
         img {
           max-width: 100%;
-          height: auto;
+          height: 560px;
           object-fit: cover;
+          @media screen and (min-width: 768px) and (max-width: 1200px) {
+            height: auto;
+          }
+          @media screen and (min-width: 320px) and (max-width: 768px) {
+            height: 268px;
+            object-fit: cover;
+          }
+        }
+        .games-description {
+          position: absolute;
+          padding: 40px 32px;
+          width: 100%;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          color: rgba(255, 255, 255, 1);
+          @media screen and (min-width: 768px) and (max-width: 1200px) {
+            padding: 20px;
+          }
+
+          @media screen and (min-width: 320px) and (max-width: 768px) {
+            padding: 0 8px 11px 8px;
+          }
+        }
+        .game-title {
+          font-family: "Montserrat", serif;
+          font-size: screen-375(24, 48);
+          font-weight: 700;
+          word-break: break-all;
+          @media screen and (min-width: 768px) and (max-width: 1200px) {
+            font-size: screen-1200(20, 24);
+            line-height: 1;
+          }
+        }
+        .game-detail {
+          font-family: "Montserrat", serif;
+          font-size: screen-375(12, 14);
+          font-weight: 400;
+          letter-spacing: 0.9px;
+          line-height: screen-375(15, 20);
+          @media screen and (min-width: 768px) and (max-width: 1200px) {
+            font-size: screen-1200(10, 12);
+            line-height: 1;
+          }
         }
 
         &:nth-child(even) {
